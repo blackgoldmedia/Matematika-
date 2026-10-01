@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Penghitung Angka 0-9</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Penghitung Angka 0-9</h1>
+    <p class="sub">Masukkan nomor, lalu lihat berapa kali tiap angka muncul.</p>
+
+    <label for="input" class="sub">Nomor</label>
+    <textarea id="input" placeholder="Contoh: 08123456789 atau 1122334455" inputmode="numeric"></textarea>
+    <div class="row">
+      <button id="hitung">Hitung</button>
+      <button id="reset" class="ghost">Hapus</button>
+    </div>
+
+    <div class="summary" id="summary" aria-live="polite">Belum ada data.</div>
+    <ul id="hasil"></ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
