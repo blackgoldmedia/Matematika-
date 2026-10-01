@@ -1,0 +1,117 @@
+:root {
+  --bg: #f3f6f4;
+  --ink: #17302a;
+  --muted: #5d716b;
+  --card: #ffffff;
+  --line: #cfdad5;
+  --accent: #0f766e;
+  --bar: #14b8a6;
+  --hit: #fde68a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1b18;
+    --ink: #e6f1ed;
+    --muted: #92a8a1;
+    --card: #172722;
+    --line: #2a3f38;
+    --accent: #5eead4;
+    --bar: #2dd4bf;
+    --hit: #4d4310;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.5;
+  padding: 20px 16px 40px;
+}
+
+main { max-width: 520px; margin: 0 auto; }
+
+h1 { font-size: 1.7rem; margin: 0 0 4px; }
+
+p.sub { margin: 0 0 18px; color: var(--muted); }
+
+label.sub { display: block; margin-bottom: 6px; color: var(--muted); }
+
+textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-family: "Courier New", monospace;
+  letter-spacing: .06em;
+  background: var(--card);
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  resize: vertical;
+}
+
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.row { display: flex; gap: 8px; margin: 10px 0 18px; }
+
+button {
+  font: inherit;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1.5px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+button.ghost { background: transparent; color: var(--accent); }
+
+.summary { color: var(--muted); margin-bottom: 12px; }
+.summary b { color: var(--ink); }
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+li {
+  display: grid;
+  grid-template-columns: 2rem 1fr 3.2rem;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+li.top { background: var(--hit); }
+
+.digit {
+  font: 700 1.3rem "Courier New", monospace;
+  text-align: center;
+}
+
+.track {
+  height: 14px;
+  background: var(--line);
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 0;
+  background: var(--bar);
+  transition: width .25s;
+}
+
+.count { text-align: right; font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fill { transition: none; }
+}
